@@ -12,7 +12,11 @@ module.exports = ({ env = "production", presets = [] }) => {
       entry: "./src",
       output: {
         path: path.resolve(__dirname, "./dist"),
-        filename: "bundle.js"
+        filename: "[name].bundle.js",
+        chunkFilename: "[id].js"
+      },
+      resolve: {
+        extensions: [".js", ".jsx", ".ts", ".tsx"]
       },
       module: {
         rules: [
