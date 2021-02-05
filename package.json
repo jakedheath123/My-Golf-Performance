@@ -20,8 +20,7 @@
   "homepage": "https://github.com/jakedheath123/my-golf-performance#readme",
   "dependencies": {
     "react": "^17.0.1",
-    "react-dom": "^17.0.1",
-    "webpack": "^5.17.0"
+    "react-dom": "^17.0.1"
   },
   "devDependencies": {
     "@babel/core": "^7.12.10",
@@ -29,6 +28,7 @@
     "@babel/preset-react": "^7.12.10",
     "babel-loader": "^8.2.2",
     "html-webpack-plugin": "^4.5.1",
+    "webpack": "^5.20.2",
     "webpack-cli": "^4.4.0",
     "webpack-dev-server": "^3.11.2",
     "webpack-merge": "^5.7.3"
