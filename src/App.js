@@ -1,14 +1,16 @@
-import React from "react";
+import React, { lazy, Suspense } from "react";
 import { Router } from "@reach/router";
 
-import Login from "./components/Login";
+const Login = lazy(() => import("./components/Login"));
 
 const App = () => {
   return (
     <>
-      <Router>
-        <Login path="/" />
-      </Router>
+      <Suspense fallback={<p>Loading..</p>}>
+        <Router>
+          <Login path="/" />
+        </Router>
+      </Suspense>
     </>
   );
 };
