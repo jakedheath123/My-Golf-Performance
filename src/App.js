@@ -1,10 +1,14 @@
 import React from "react";
+import { Router } from "@reach/router";
+
 import Login from "./components/Login";
 
 const App = () => {
   return (
     <>
-      <Login />
+      <Router>
+        <Login path="/" />
+      </Router>
     </>
   );
 };
