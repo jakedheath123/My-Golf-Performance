@@ -12,14 +12,11 @@ module.exports = ({ env = "production", presets = [] }) => {
       entry: "./src",
       output: {
         path: path.resolve(__dirname, "./dist"),
-        filename: "[name].bundle.js",
+        filename: "bundle.js",
         chunkFilename: "[id].js"
       },
       resolve: {
-        extensions: [".js", ".jsx", ".ts", ".tsx"],
-        alias: {
-          abcd$: path.resolve(__dirname, "path/to/file_name.js")
-        }
+        extensions: [".js", ".jsx", ".ts", ".tsx"]
       },
       module: {
         rules: [
