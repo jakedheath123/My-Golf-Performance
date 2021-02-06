@@ -1,16 +1,19 @@
 import React, { lazy, Suspense } from "react";
 import { Router } from "@reach/router";
+import ErrorBoundary from "./components/ErrorBoundary";
 
 const Login = lazy(() => import("./components/Login"));
 
 const App = () => {
   return (
     <>
-      <Suspense fallback={<p>Loading..</p>}>
-        <Router>
-          <Login path="/" />
-        </Router>
-      </Suspense>
+      <ErrorBoundary>
+        <Suspense fallback={<p>Loading..</p>}>
+          <Router>
+            <Login path="/" />
+          </Router>
+        </Suspense>
+      </ErrorBoundary>
     </>
   );
 };
