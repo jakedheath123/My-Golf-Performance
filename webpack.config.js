@@ -12,7 +12,7 @@ module.exports = ({ env = "production", presets = [] }) => {
       entry: "./src",
       output: {
         path: path.resolve(__dirname, "./dist"),
-        filename: "[name].bundle.js",
+        filename: "bundle.js",
         chunkFilename: "[id].js"
       },
       resolve: {
