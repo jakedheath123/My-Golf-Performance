@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/jakedheath123/my-golf-performance#readme",
   "dependencies": {
+    "@material-ui/core": "^4.11.3",
     "react": "^17.0.1",
     "react-dom": "^17.0.1"
   },

@@ -16,7 +16,10 @@ module.exports = ({ env = "production", presets = [] }) => {
         chunkFilename: "[id].js"
       },
       resolve: {
-        extensions: [".js", ".jsx", ".ts", ".tsx"]
+        extensions: [".js", ".jsx", ".ts", ".tsx"],
+        alias: {
+          abcd$: path.resolve(__dirname, "path/to/file_name.js")
+        }
       },
       module: {
         rules: [
