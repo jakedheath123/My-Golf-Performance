@@ -1,6 +1,10 @@
 .root {
   height: 100vh;
   transition: transform;
+  background-image: url("../images/image9.jpg");
+  background-size: cover;
+  min-width: 100%;
+  min-height: 100%;
 }
 
 .container {
