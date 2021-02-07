@@ -1,14 +1,15 @@
-.root {
+.login {
   height: 100vh;
   transition: transform;
-  background-image: url("../images/image9.jpg");
+  background-image: url("../images/image7.jpg");
   background-size: cover;
   min-width: 100%;
   min-height: 100%;
 }
 
-.container {
+.login__form {
   position: fixed;
+  min-width: 300px;
   top: 50%;
   left: 50%;
   min-width: 300;
@@ -18,4 +19,12 @@
   box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
     rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
     rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset !important;
+}
+
+.login__icon-buttons {
+  width: 250px;
+  height: 100%;
+  padding: 0;
+  min-width: 64px;
+  box-sizing: border-box;
 }
