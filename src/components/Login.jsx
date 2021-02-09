@@ -10,11 +10,40 @@ import Typography from '@material-ui/core/Typography';
 import FacebookIcon from '@material-ui/icons/Facebook';
 
 const Login = () => { 
-
   return (
     <div className="login">
       <Paper className="login__form">
       <form >
+      <Grid container justify="center">
+          <Grid item className="login__icon-buttons--spacing">
+        <Button 
+        className="login__icon-buttons"
+        disableElevation
+        variant="contained"
+        color="secondary"
+        startIcon={<i className="fab fa-google"></i>}
+        >
+       Sign in with Google
+      </Button>
+      </Grid>  
+      </Grid>
+      <Grid container justify="center">
+          <Grid item className="login__icon-buttons--spacing">
+        <Button 
+        className="login__icon-buttons"
+        disableElevation
+        startIcon={<FacebookIcon />}
+        variant="contained"
+        color="primary">
+      Sign in with Facebook
+      </Button>
+      </Grid>  
+      </Grid>
+      <Grid container justify="center">
+            <Grid item>
+            <Typography variant="subtitle1">Or</Typography>
+          </Grid>
+      </Grid>      
       <Grid container spacing={1} alignItems="flex-end" justify="center" >
           <Grid item >
             <PersonIcon />
@@ -31,7 +60,7 @@ const Login = () => {
             <TextField id="input-with-icon-grid" label="Password" />
           </Grid>
           <Grid container justify="center">
-            <Grid item>
+            <Grid item className="login__icon-buttons--spacing">
             <Button
             disableElevation
             size="medium"
@@ -43,36 +72,6 @@ const Login = () => {
       </Button>
             </Grid>
           </Grid>
-          <Grid container justify="center">
-            <Grid item>
-            <Typography variant="subtitle1">Or</Typography>
-          </Grid>
-          <Grid container justify="center">
-          <Grid item>
-        <Button 
-        className="login__icon-buttons"
-        disableElevation
-        variant="contained"
-        color="secondary"
-        startIcon={<i class="fab fa-google"></i>}
-        >
-       Sign in with Google
-      </Button>
-      </Grid>  
-      </Grid>
-      <Grid container justify="center">
-          <Grid item>
-        <Button 
-        className="login__icon-buttons"
-        disableElevation
-        startIcon={<FacebookIcon />}
-        variant="contained"
-        color="primary">
-      Sign in with Facebook
-      </Button>
-      </Grid>  
-      </Grid>
-      </Grid>      
         </Grid>
         </form>
         </Paper>
