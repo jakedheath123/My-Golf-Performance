@@ -1,4 +1,5 @@
-import React from "react"
+import React, { FunctionComponent } from "react"
+import { RouteComponentProps } from "@reach/router"
 import TextField from '@material-ui/core/TextField';
 import Grid from '@material-ui/core/Grid';
 import PersonIcon from '@material-ui/icons/Person';
@@ -9,7 +10,7 @@ import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 import Typography from '@material-ui/core/Typography';
 import FacebookIcon from '@material-ui/icons/Facebook';
 
-const Login = () => { 
+const Login: FunctionComponent<RouteComponentProps> = () => { 
   return (
     <div className="login">
       <Paper className="login__form">

@@ -1,10 +1,11 @@
-import React, { lazy, Suspense } from "react";
+import React, { FunctionComponent, lazy, Suspense } from "react";
 import { Router } from "@reach/router";
+
 import ErrorBoundary from "./components/ErrorBoundary";
 
 const Login = lazy(() => import("./components/Login"));
 
-const App = () => {
+const App: FunctionComponent = () => {
   return (
     <>
       <ErrorBoundary>
