@@ -1,8 +1,21 @@
 .login {
   height: 100vh;
   transition: transform;
-  background-image: url("../images/image7.jpg");
-  background-size: cover;
+  // background-size: cover;
+  // background: url("../images/image6.jpg") 0px;
+  background: #141e30; /* fallback for old browsers */
+  background: #8e9eab; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #eef2f3,
+    #8e9eab
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #eef2f3,
+    #8e9eab
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
   min-width: 100%;
   min-height: 100%;
 }
@@ -27,4 +40,8 @@
   padding: 0;
   min-width: 64px;
   box-sizing: border-box;
+}
+
+.login__icon-buttons--spacing {
+  margin: 0.5em !important;
 }
