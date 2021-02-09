@@ -26,6 +26,11 @@ module.exports = ({ env = "production", presets = [] }) => {
             use: "babel-loader"
           },
           {
+            test: /\.(ts)x?$/,
+            use: "ts-loader",
+            exclude: /node_modules/
+          },
+          {
             test: /\.css$/,
             use: ["style-loader", "css-loader"]
           },
