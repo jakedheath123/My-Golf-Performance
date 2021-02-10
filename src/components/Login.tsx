@@ -12,7 +12,7 @@ import FacebookIcon from '@material-ui/icons/Facebook';
 
 const Login: FunctionComponent<RouteComponentProps> = () => { 
   return (
-    <div className="login">
+    <div className="login" data-test="component-login">
       <Paper className="login__form">
       <form >
       <Grid container justify="center">
