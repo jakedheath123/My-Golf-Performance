@@ -1,4 +1,5 @@
 import React, { FunctionComponent } from "react"
+import { navigate } from "@reach/router"
 import { RouteComponentProps } from "@reach/router"
 import TextField from '@material-ui/core/TextField';
 import Grid from '@material-ui/core/Grid';
@@ -17,7 +18,8 @@ const Login: FunctionComponent<RouteComponentProps> = () => {
       <form >
       <Grid container justify="center">
           <Grid item className="login__icon-buttons--spacing">
-        <Button 
+        <Button
+        onClick={() => navigate("/golfcourselist")} 
         className="login__icon-buttons"
         disableElevation
         variant="contained"
