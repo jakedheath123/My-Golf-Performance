@@ -48,6 +48,9 @@ module.exports = ({ env = "production", presets = [] }) => {
           }
         ]
       },
+      devServer: {
+        historyApiFallback: true
+      },
       plugins: [
         new HtmlWebpackPlugin({
           template: "./src/index.html"
