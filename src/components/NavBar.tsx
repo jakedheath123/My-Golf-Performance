@@ -1,4 +1,4 @@
-import React, {FunctionComponent} from 'react';
+import React, { FunctionComponent } from 'react';
 import { navigate } from "@reach/router"
 import { makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
@@ -11,7 +11,7 @@ import AccountCircle from '@material-ui/icons/AccountCircle';
 const NavBar: FunctionComponent = () => {
   const classes = useStyles();
   return (
-    <React.Fragment>
+    <div className="navbar">
       <AppBar position="fixed" color="primary" className={classes.appBar}>
         <Toolbar>
           <IconButton edge="start" color="inherit" aria-label="open drawer">
@@ -24,7 +24,7 @@ const NavBar: FunctionComponent = () => {
           <Button color="inherit" onClick={() => navigate("/")}>Logout</Button>
         </Toolbar>
       </AppBar>
-    </React.Fragment>
+    </div>
   );
 };
 
