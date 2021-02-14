@@ -6,7 +6,7 @@ import NavBar from "./components/NavBar"
 import UserPagesContainer from "./components/UserPagesContainer"
 
 const Login = lazy(() => import("./components/Login"));
-const GolCourseList = lazy(() => import("./components/GolfCourseList"))
+const GolCoursesList = lazy(() => import("./components/GolfCoursesList"))
 
 const App: FunctionComponent = () => {
   
@@ -16,7 +16,7 @@ const App: FunctionComponent = () => {
           <Router>
             <Login path="/" />
             <UserPagesContainer path="/*">
-              <GolCourseList path="/golfcourselist"/>
+              <GolCoursesList path="/golfcourseslist"/>
             </UserPagesContainer>    
           </Router>
         </Suspense>

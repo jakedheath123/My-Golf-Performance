@@ -19,7 +19,7 @@ const Login: FunctionComponent<RouteComponentProps> = () => {
       <Grid container justify="center">
           <Grid item className="login__icon-buttons--spacing">
         <Button
-        onClick={() => navigate("/golfcourselist")} 
+        onClick={() => navigate("/golfcourseslist")} 
         className="login__icon-buttons"
         disableElevation
         variant="contained"
