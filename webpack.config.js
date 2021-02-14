@@ -23,26 +23,30 @@ module.exports = ({ env = "production", presets = [] }) => {
           {
             test: /\.(js)x?$/,
             exclude: /node_modules/,
-            use: "babel-loader"
+            use: [{ loader: "babel-loader" }]
           },
           {
             test: /\.(ts)x?$/,
-            use: "ts-loader",
+            use: [{ loader: "ts-loader" }],
             exclude: /node_modules/
           },
           {
             test: /\.css$/,
-            use: ["style-loader", "css-loader"]
+            use: [{ loader: "style-loader" }, { loader: "css-loader" }]
           },
           {
             test: /\.s[ac]ss$/i,
-            use: ["style-loader", "css-loader", "sass-loader"]
+            use: [
+              { loader: "style-loader" },
+              { loader: "css-loader" },
+              { loader: "sass-loader" }
+            ]
           },
           {
             test: /\.(png|jpe?g|gif)$/i,
             use: [
               {
-                loader: "file-loader"
+                loader: "url-loader"
               }
             ]
           }
