@@ -3,15 +3,15 @@ import { RouteComponentProps } from "@reach/router"
 
 import NavBar from "./NavBar"
 
-interface UserPagesProps extends RouteComponentProps  {
+interface UserPagesContainerProps extends RouteComponentProps  {
   url?: string
 }
 
-const UserPages: FunctionComponent<UserPagesProps> = (props) => (
+const UserPagesContainer: FunctionComponent<UserPagesContainerProps> = (props) => (
   <>
    <div>{props.children}</div>
    <NavBar/> 
   </>
 )
 
-export default UserPages;
+export default UserPagesContainer;
