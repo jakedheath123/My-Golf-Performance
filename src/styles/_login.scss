@@ -1,10 +1,17 @@
 .login {
   height: 100vh;
   transition: transform;
-  background-size: cover;
-  background: url("../images/image6.jpg") 0px;
-  min-width: 100%;
-  min-height: 100%;
+  background: #283048; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #859398,
+    #283048
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #859398,
+    #283048
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 .login__form {
@@ -16,9 +23,8 @@
   padding: 2em;
   transform: translate(-50%, -50%);
   transition: transform;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
-    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
-    rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset !important;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
+    rgba(0, 0, 0, 0.22) 0px 15px 12px !important;
 }
 
 .login__icon-buttons {
