@@ -1,4 +1,5 @@
 import React, { FunctionComponent } from 'react';
+import { useSelector, useDispatch } from "react-redux"
 import { navigate } from "@reach/router"
 import { makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
@@ -7,9 +8,21 @@ import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import Button from '@material-ui/core/Button';
 import AccountCircle from '@material-ui/icons/AccountCircle';
+import Typography from '@material-ui/core/Typography';
+
+import { signOut } from "../firebase" 
 
 const NavBar: FunctionComponent = () => {
   const classes = useStyles();
+  const dispatch = useDispatch()
+  const { user } = useSelector(state => state.userAuthentication)
+
+  const handleClick = () => {
+    signOut()
+    dispatch({type: "CLEAR_USER"})
+    navigate("/")
+  }
+
   return (
     <div className="navbar">
       <AppBar position="fixed" color="primary" className={classes.appBar}>
@@ -21,7 +34,14 @@ const NavBar: FunctionComponent = () => {
           <IconButton color="inherit" className={classes.account}>
             <AccountCircle />
           </IconButton>
-          <Button color="inherit" onClick={() => navigate("/")}>Logout</Button>
+          <Typography variant="subtitle1">
+      Logged in as:
+    </Typography>
+    {user?.email &&  <Typography variant="subtitle2">
+      {user.email}
+    </Typography>}
+   
+          <Button color="inherit" onClick={handleClick}>Logout</Button>
         </Toolbar>
       </AppBar>
     </div>
