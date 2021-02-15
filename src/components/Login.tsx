@@ -1,5 +1,4 @@
 import React, { FunctionComponent } from "react"
-import { navigate } from "@reach/router"
 import { RouteComponentProps } from "@reach/router"
 import TextField from '@material-ui/core/TextField';
 import Grid from '@material-ui/core/Grid';
@@ -11,6 +10,8 @@ import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 import Typography from '@material-ui/core/Typography';
 import FacebookIcon from '@material-ui/icons/Facebook';
 
+import Authentication from "./Authentication"
+
 const Login: FunctionComponent<RouteComponentProps> = () => { 
   return (
     <div className="login" data-test="component-login">
@@ -18,16 +19,7 @@ const Login: FunctionComponent<RouteComponentProps> = () => {
       <form >
       <Grid container justify="center">
           <Grid item className="login__icon-buttons--spacing">
-        <Button
-        onClick={() => navigate("/golfcourseslist")} 
-        className="login__icon-buttons"
-        disableElevation
-        variant="contained"
-        color="secondary"
-        startIcon={<i className="fab fa-google"></i>}
-        >
-       Sign in with Google
-      </Button>
+      <Authentication />
       </Grid>  
       </Grid>
       <Grid container justify="center">
