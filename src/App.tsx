@@ -2,7 +2,6 @@ import React, { FunctionComponent, lazy, Suspense } from "react";
 import { Router } from "@reach/router";
 
 import ErrorBoundary from "./components/ErrorBoundary";
-import NavBar from "./components/NavBar"
 import UserPagesContainer from "./components/UserPagesContainer"
 
 const Login = lazy(() => import("./components/Login"));
