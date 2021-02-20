@@ -2,14 +2,23 @@ import firebase from "firebase/app";
 import "firebase/firestore";
 import "firebase/auth";
 
-import { apiKey, messagingSenderId, appId, measurementId } from "../.env.js";
+import {
+  apiKey,
+  authDomain,
+  databaseURL,
+  projectId,
+  storageBucket,
+  messagingSenderId,
+  appId,
+  measurementId
+} from "../.env";
 
 const config = {
   apiKey,
-  authDomain: "my-golf-performance.firebaseapp.com",
-  databaseURL: "https://my-golf-performance.firebaseio.com",
-  projectId: "my-golf-performance",
-  storageBucket: "my-golf-performance.appspot.com",
+  authDomain,
+  databaseURL,
+  projectId,
+  storageBucket,
   messagingSenderId,
   appId,
   measurementId
