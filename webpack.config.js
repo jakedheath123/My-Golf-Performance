@@ -16,7 +16,7 @@ module.exports = ({ env = "production", presets = [] }) => {
         chunkFilename: "[id].js"
       },
       resolve: {
-        extensions: [".js", ".jsx", ".ts", ".tsx"]
+        extensions: [".js", ".jsx", ".ts", ".tsx", ".png"]
       },
       module: {
         rules: [
@@ -53,7 +53,8 @@ module.exports = ({ env = "production", presets = [] }) => {
         ]
       },
       devServer: {
-        historyApiFallback: true
+        historyApiFallback: true,
+        hot: true
       },
       plugins: [
         new HtmlWebpackPlugin({
