@@ -24,8 +24,8 @@ const NavBar: FunctionComponent = () => {
   }
 
   return (
-    <div className="navbar">
-      <AppBar position="fixed" color="primary" className={classes.appBar}>
+    <div >
+      <AppBar position="fixed" color="primary" className="navbar">
         <Toolbar>
           <IconButton edge="start" color="inherit" aria-label="open drawer">
             <MenuIcon />
@@ -37,7 +37,7 @@ const NavBar: FunctionComponent = () => {
           <Typography variant="subtitle1">
       Logged in as:
     </Typography>
-    {user?.email &&  <Typography variant="subtitle2">
+    {user &&  <Typography variant="subtitle2">
       {user.email}
     </Typography>}
    
@@ -68,10 +68,6 @@ const useStyles = makeStyles((theme) => ({
   },
   subheader: {
     backgroundColor: theme.palette.background.paper,
-  },
-  appBar: {
-    top: 'auto',
-    bottom: 0,
   },
   grow: {
     flexGrow: 1,

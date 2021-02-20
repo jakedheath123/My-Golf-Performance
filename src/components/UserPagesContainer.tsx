@@ -9,8 +9,8 @@ interface UserPagesContainerProps extends RouteComponentProps  {
 
 const UserPagesContainer: FunctionComponent<UserPagesContainerProps> = (props) => (
   <>
-   <div className="user-pages">{props.children}</div>
    <NavBar/> 
+   <div className="user-pages">{props.children}</div>
   </>
 )
 
