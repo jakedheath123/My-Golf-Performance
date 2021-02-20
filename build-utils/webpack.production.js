@@ -1,5 +1,1 @@
-module.exports = () => ({
-  // output: {
-  //   filename: "[contenthash].js"
-  // }
-});
+module.exports = () => ({});
