@@ -19,6 +19,7 @@ const NavBar: FunctionComponent = () => {
 
   const handleClick = () => {
     signOut()
+    dispatch({type: "SIGN_IN_CLICKED", payload: false})
     dispatch({type: "CLEAR_USER"})
     navigate("/")
   }
