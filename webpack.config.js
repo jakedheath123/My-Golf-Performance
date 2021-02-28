@@ -53,8 +53,7 @@ module.exports = ({ env = "production", presets = [] }) => {
         ]
       },
       devServer: {
-        historyApiFallback: true,
-        hot: true
+        historyApiFallback: true
       },
       plugins: [
         new HtmlWebpackPlugin({
