@@ -1,9 +1,11 @@
 import { useState, useEffect } from "react";
+import { useDispatch } from "react-redux";
 
 import { firestore } from "../firebase";
 
-export const useFirestore = collectionString => {
+export const useFirestore = (collectionString, actionType) => {
   const [response, setResponse] = useState(null);
+  const dispatch = useDispatch();
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
@@ -19,7 +21,7 @@ export const useFirestore = collectionString => {
         const collection = snapshot.docs.map(doc => {
           return { id: doc.id, ...doc.data() };
         });
-        setResponse(collection);
+        dispatch({ type: "SET_GOLF_COURSE_LIST", payload: collection });
         setLoading(false);
       })
       .catch(error => {
@@ -28,5 +30,5 @@ export const useFirestore = collectionString => {
       });
   }, []);
 
-  return [response, loading, error];
+  return { loading, error };
 };
