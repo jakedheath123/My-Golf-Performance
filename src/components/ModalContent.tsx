@@ -1,5 +1,5 @@
 import React, { FunctionComponent } from 'react';
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { navigate } from "@reach/router"
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
@@ -13,10 +13,13 @@ interface IProps {
 
 const ModalContent: FunctionComponent<IProps> = ({ id, name }) => {
    const classes = useStyles();
+   const { user: { uid } } = useSelector(state => state.userAuthentication);
    const dispatch = useDispatch()
 
    const handleClick = () => {
+     dispatch({ type: "COURSE_SELECTED", payload: true})
      dispatch({ type: "SET_SELECTED_COURSE", payload: id})
+     dispatch({ type: "SET_USER_COURSE", payload: { courseId: id, userId: uid  }})
      navigate(`/user-pages/course/${id}`)
    }
 
