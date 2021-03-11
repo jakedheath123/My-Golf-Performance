@@ -17,7 +17,7 @@ const App: FunctionComponent = () => {
         <Suspense fallback={<p>Loading..</p>}>
           <Router primary={false}>
             <Login path="/" />
-            <UserPagesContainer path="user-pages">
+            <UserPagesContainer path="/user-pages">
               <GolCourseList path="/golf-course-list"/>
               <SelectedCourse path="/course/:courseId"/>
               <CourseHole path={"/course/:courseId/:hole"} />
