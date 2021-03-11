@@ -1,0 +1,95 @@
+.course-hole {
+  background: #0f2027; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #2c5364,
+    #203a43,
+    #0f2027
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #2c5364,
+    #203a43,
+    #0f2027
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  padding: 0 !important;
+  height: 100vh;
+
+  &__top-headings {
+    text-align: center;
+    color: white;
+    padding: 1em;
+    // margin-bottom: 10em;
+
+    h1,
+    h2 {
+      font-size: 2em;
+    }
+
+    h3 {
+      font-size: 4em;
+    }
+  }
+
+  &__sub-headings {
+    height: 25vh;
+  }
+
+  &__center-content {
+    margin-top: 1em;
+
+    button {
+      color: #7fffd4;
+      padding: 0;
+      width: 120px;
+      height: 80px;
+      border-radius: 10%;
+      font-size: 5rem;
+      border: 5px #7fffd4 solid;
+
+      &:hover {
+        border: 5px red solid;
+        color: red;
+      }
+    }
+
+    &__score-border {
+      position: relative;
+      border: 35px #7fffd4 solid;
+      width: 500px;
+      height: 500px;
+      border-radius: 50%;
+
+      &__score {
+        color: white;
+        font-size: 15rem !important;
+        position: absolute;
+        top: 75px;
+        left: 150px;
+      }
+    }
+  }
+}
+
+// .course-hole-container__headings {
+//   background: green;
+//   text-align: center;
+//   color: white;
+//   padding: 0 1em;
+
+//   &__content {
+//     margin-right: auto !important;
+//   }
+
+//   &__content__top-typo {
+//     font-weight: 900 !important;
+//   }
+// }
+
+// .course-hole-container__middle-section {
+//   img {
+//     width: 500px;
+//     height: 800px;
+//   }
+// }

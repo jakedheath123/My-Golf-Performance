@@ -27,7 +27,7 @@ const Login: FunctionComponent<RouteComponentProps> = () => {
 
   useEffect(() => {
     const unsubscribeFromAuth = auth.onAuthStateChanged(user => setCurrentUser(user))
-
+    
     if (currentUser) {
       dispatch({type: "GET_USER_AUTHENTICATION", payload: currentUser})
       const timer = setTimeout(() => {

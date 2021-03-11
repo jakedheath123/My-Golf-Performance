@@ -14,25 +14,31 @@ import { signOut } from "../firebase"
 
 const NavBar: FunctionComponent = () => {
   const classes = useStyles();
-  const dispatch = useDispatch()
-  const { user } = useSelector(state => state.userAuthentication)
+  const dispatch = useDispatch();
+  const { user } = useSelector(state => state.userAuthentication);
+  const { courseSelected } = useSelector(state => state.userInterface);
 
-  const handleClick = () => {
+  const handleSignOut = () => {
     signOut()
     dispatch({type: "SIGN_IN_CLICKED", payload: false})
     dispatch({type: "CLEAR_USER"})
+    dispatch({ type: "SET_MENU_CLICKED", payload: false })
     navigate("/")
+  }
+
+  const handleMenuClick = () => {
+    dispatch({ type: "SET_MENU_CLICKED" })
   }
 
   return (
     <div >
       <AppBar position="fixed" color="primary" className="navbar">
         <Toolbar>
-          <IconButton edge="start" color="inherit" aria-label="open drawer">
+          <IconButton disabled={courseSelected} edge="start" color="inherit" aria-label="open drawer" onClick={handleMenuClick}>
             <MenuIcon />
           </IconButton>
           <div className={classes.grow} />
-          <IconButton color="inherit" className={classes.account}>
+          <IconButton disabled={courseSelected} color="inherit" className={classes.account}>
             <AccountCircle />
           </IconButton>
           <Typography variant="subtitle1">
@@ -42,7 +48,7 @@ const NavBar: FunctionComponent = () => {
       {user.email}
     </Typography>}
    
-          <Button color="inherit" onClick={handleClick}>Logout</Button>
+          <Button disabled={courseSelected} color="inherit" onClick={handleSignOut}>Logout</Button>
         </Toolbar>
       </AppBar>
     </div>

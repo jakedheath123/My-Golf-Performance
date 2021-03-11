@@ -1,0 +1,43 @@
+.sidebar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  background: #1b1c1d;
+  transition: width 0.5s;
+
+  &__container {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    right: 0;
+    // padding-top: 0.5em;
+
+    &:hover {
+      background: lightgray;
+    }
+  }
+
+  &--transition-active {
+    width: 250px;
+  }
+
+  &__container__button-link {
+    padding: 0 !important;
+
+    &__details {
+      color: white !important;
+      width: 250px;
+      border-bottom: 1px gray solid !important;
+
+      h6 {
+        margin-bottom: 0.5em;
+      }
+
+      svg {
+        margin-top: 0.3em;
+      }
+    }
+  }
+}
