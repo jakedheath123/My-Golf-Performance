@@ -1,24 +1,206 @@
-.root {
+/* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+/* Chrome 10-25, Safari 5.1-6 */
+/* fallback for old browsers */
+.login {
   height: 100vh;
   -webkit-transition: -webkit-transform;
   transition: -webkit-transform;
   transition: transform;
   transition: transform, -webkit-transform;
+  background: #283048;
+  background: -webkit-gradient(linear, left top, right top, from(#859398), to(#283048));
+  background: linear-gradient(to right, #859398, #283048);
 }
 
-.container {
-  position: fixed;
+.login-container {
+  height: 100vh;
+  position: relative;
+  z-index: 1;
+  background-color: linear-gradient(to right, #859398, #283048);
+}
+
+.login__form {
+  background-color: none !important;
+  position: relative;
+  max-width: 400px;
   top: 50%;
   left: 50%;
-  min-width: 300 !important;
-  padding: 2em;
+  min-width: 300;
+  border-radius: 10px !important;
+  padding: 3em;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
   -webkit-transition: -webkit-transform;
   transition: -webkit-transform;
   transition: transform;
   transition: transform, -webkit-transform;
-  -webkit-box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset !important;
-          box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset !important;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px !important;
+          box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px !important;
+}
+
+.login__icon-buttons {
+  width: 250px;
+  height: 100%;
+  padding: 0;
+  min-width: 64px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.login__icon-buttons--spacing {
+  margin: 0.5em !important;
+}
+
+.tester {
+  position: absolute;
+  top: 100px;
+  right: 280px;
+}
+
+.tester2 {
+  position: absolute;
+  top: 100px;
+  z-index: -1;
+  opacity: 0.5;
+}
+
+.login-container_male-img {
+  width: 440px;
+  height: 580px;
+}
+
+.login-container_female-img {
+  height: 1400px;
+  width: 100%;
+}
+
+.user-pages {
+  min-height: 100vh;
+  background: -webkit-gradient(linear, left top, right top, from(#859398), to(#283048));
+  background: linear-gradient(to right, #859398, #283048);
+  margin-top: 4em;
+}
+
+.course-hole {
+  background: #0f2027;
+  /* fallback for old browsers */
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: -webkit-gradient(linear, left top, right top, from(#2c5364), color-stop(#203a43), to(#0f2027));
+  background: linear-gradient(to right, #2c5364, #203a43, #0f2027);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  padding: 0 !important;
+  height: 100vh;
+}
+
+.course-hole__top-headings {
+  text-align: center;
+  color: white;
+  padding: 1em;
+}
+
+.course-hole__top-headings h1,
+.course-hole__top-headings h2 {
+  font-size: 2em;
+}
+
+.course-hole__top-headings h3 {
+  font-size: 4em;
+}
+
+.course-hole__sub-headings {
+  height: 25vh;
+}
+
+.course-hole__center-content {
+  margin-top: 1em;
+}
+
+.course-hole__center-content button {
+  color: #7fffd4;
+  padding: 0;
+  width: 120px;
+  height: 80px;
+  border-radius: 10%;
+  font-size: 5rem;
+  border: 5px #7fffd4 solid;
+}
+
+.course-hole__center-content button:hover {
+  border: 5px red solid;
+  color: red;
+}
+
+.course-hole__center-content__score-border {
+  position: relative;
+  border: 35px #7fffd4 solid;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+}
+
+.course-hole__center-content__score-border__score {
+  color: white;
+  font-size: 15rem !important;
+  position: absolute;
+  top: 75px;
+  left: 150px;
+}
+
+.sidebar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  background: #1b1c1d;
+  -webkit-transition: width 0.5s;
+  transition: width 0.5s;
+}
+
+.sidebar__container {
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  right: 0;
+}
+
+.sidebar__container:hover {
+  background: lightgray;
+}
+
+.sidebar--transition-active {
+  width: 250px;
+}
+
+.sidebar__container__button-link {
+  padding: 0 !important;
+}
+
+.sidebar__container__button-link__details {
+  color: white !important;
+  width: 250px;
+  border-bottom: 1px gray solid !important;
+}
+
+.sidebar__container__button-link__details h6 {
+  margin-bottom: 0.5em;
+}
+
+.sidebar__container__button-link__details svg {
+  margin-top: 0.3em;
+}
+
+.round-summary__table {
+  max-width: 930px;
+}
+
+body {
+  margin: 0;
+  height: 100vh;
 }
 /*# sourceMappingURL=style.css.map */

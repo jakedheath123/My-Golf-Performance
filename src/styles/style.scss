@@ -2,7 +2,11 @@
 @import "./login";
 @import "./navbar";
 @import "./userPagesContainer";
+@import "./courseHole";
+@import "./sideBar";
+@import "./roundSummary";
 
 body {
   margin: 0;
+  height: 100vh;
 }
