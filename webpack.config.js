@@ -16,7 +16,7 @@ module.exports = ({ env = "production", presets = [] }) => {
         chunkFilename: "[id].js"
       },
       resolve: {
-        extensions: [".js", ".jsx", ".ts", ".tsx", ".png"]
+        extensions: [".js", ".jsx", ".ts", ".tsx", ".png", ".jpg"]
       },
       module: {
         rules: [
