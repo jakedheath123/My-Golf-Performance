@@ -6,6 +6,7 @@ import Fade from '@material-ui/core/Fade';
 
 import { useFirestore } from "../hooks/useFirestore"
 import GolfCourseCard from "./GolfCourseCard"
+import CoursesCarousel from "./CoursesCarousel";
 
 const GolfCourseList: FunctionComponent<RouteComponentProps> = () => {
   const { loading, error }: any = useFirestore("courses");
@@ -15,11 +16,7 @@ const GolfCourseList: FunctionComponent<RouteComponentProps> = () => {
 
   return (
     <Fade in={true} timeout={{enter: 1000}}>
-      <Grid container alignItems="center" justify="center" direction="column">
-        {golfCourseList.map(course => (
-          <GolfCourseCard key={course.id} course={course}/>
-        ))}
-      </Grid>
+      <CoursesCarousel />
     </Fade>
   )
 }
