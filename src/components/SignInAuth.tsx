@@ -38,7 +38,7 @@ const SignInAuth = () => {
     <Grid item >
       <form>
       <UserInputField id="email" label="Email" name="email" onChange={handleChange}/>
-      <UserInputField id="password" label="password" name="password" onChange={handleChange}/>
+      <UserInputField id="password" label="Password" name="password" onChange={handleChange}/>
          <Button
          type="submit"
          fullWidth
