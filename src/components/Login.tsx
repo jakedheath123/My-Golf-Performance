@@ -1,29 +1,23 @@
-import React, { FunctionComponent, useState, useEffect } from "react"
-import { RouteComponentProps } from "@reach/router"
-import { navigate } from "@reach/router"
-import { useDispatch } from "react-redux"
+import React, { FunctionComponent, useState, useEffect } from "react";
+import { RouteComponentProps } from "@reach/router";
+import { navigate } from "@reach/router";
+import { useDispatch, useSelector } from "react-redux";
 import Grid from '@material-ui/core/Grid';
-import { makeStyles } from '@material-ui/core/styles';
 import Container from "@material-ui/core/Container";
-import Link from "@material-ui/core/Link"
+import Link from "@material-ui/core/Link";
 import Fade from '@material-ui/core/Fade';
 import Typography from "@material-ui/core/Typography";
 
-import SignInAuth from "./SignInAuth"
-import SignUpAuth from "./SignUpAuth"
-import GoogleAuth from "./GoogleAuth"
-import { auth } from "../firebase"
+import SignInAuth from "./SignInAuth";
+import SignUpAuth from "./SignUpAuth";
+import GoogleAuth from "./GoogleAuth";
+import { auth } from "../firebase";
 
 const Login: FunctionComponent<RouteComponentProps> = () => { 
-  const [checked, setChecked] = useState(true)
-  const [tester, setTester] = useState(true)
   const [currentUser, setCurrentUser] = useState(null)
-  const classes = useStyles();
+  const [toggleContent, setToggleContent] = useState(true)
   const dispatch = useDispatch()
-
-  const handleClick = () => {
-    setChecked(false)
-  }
+  const { signUpLinkClicked } = useSelector(state => state.userInterface);
 
   useEffect(() => {
     const unsubscribeFromAuth = auth.onAuthStateChanged(user => setCurrentUser(user))
@@ -37,10 +31,10 @@ const Login: FunctionComponent<RouteComponentProps> = () => {
         return () => clearTimeout(timer)
     }
  
-    if (!checked) {
+    if (!signUpLinkClicked) {
       const timer = setTimeout(() => {
-      setTester(false)
-      setChecked(true)
+      setToggleContent(current => !current)
+       dispatch({ type: "SIGN_UP_LINK_CLICKED" })
       }, 400)
 
       return () => clearTimeout(timer)
@@ -48,18 +42,18 @@ const Login: FunctionComponent<RouteComponentProps> = () => {
 
     return unsubscribeFromAuth;  
 
-  }, [currentUser, checked])
+  }, [currentUser, signUpLinkClicked])
  
   return (
-    <Container disableGutters={true} maxWidth={false} className={classes.root} data-test="component-login">
-      <Grid container justify="center" direction="column" alignItems="center" spacing={2} className={classes.container}>
-        <Fade in={checked} timeout={{exit: 400, enter: 400}}>
-          <div className={classes.fadeWrapper}>
-            {tester && 
+    <Container component="main" disableGutters={true} maxWidth={false} className="login" data-test="component-login">
+      <Grid container justify="center" direction="column" alignItems="center" spacing={2} className="login__container">
+        <Fade in={signUpLinkClicked} timeout={{exit: 400, enter: 400}}>
+          <div className="login__container__fade-wrapper">
+            {toggleContent ? 
             <>
             <SignInAuth />
             <Grid item>
-          <Typography component="p" variant="subtitle1" className={classes.typography}>
+          <Typography component="h1" variant="subtitle1" >
             Or
           </Typography>
         </Grid>
@@ -69,43 +63,16 @@ const Login: FunctionComponent<RouteComponentProps> = () => {
              {"Don't have an account? Sign up"}
           </Link>
         </Grid>
-            </>}
-            {!tester && <SignUpAuth />}
+            </> : <SignUpAuth />}
         </div>
         </Fade>
       </Grid>
     </Container>
   );
-};
 
-const useStyles = makeStyles((theme) => ({
-  typography: {
-    margin: "0.5em 0"
-  },
-  fadeWrapper: {
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "center",
-  },
-  root: {
-    height: "100vh",
-    position: "relative",
-    background: "#ECE9E6"
-  },
-  container: {
-    minHeight: "600px",
-    maxWidth: "600px",
-    margin: "0",
-    backgroundColor: "white",
-    position: "absolute",
-    transform: "translate(-50%, -50%)",
-    left: "50%",
-    top: "50%",
-    padding: "2em",
-    border: "1px solid grey",
-    boxShadow: "rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset"
+  function handleClick() {    
+    dispatch({ type: "SIGN_UP_LINK_CLICKED" })
   }
-}));
-
+};
 
 export default Login;
