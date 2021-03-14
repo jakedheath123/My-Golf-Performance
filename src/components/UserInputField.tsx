@@ -5,11 +5,13 @@ interface IProps {
   id: string;
   label: string;
   name: string;
-  onChange: (e: object, name: string) => void
+  onChange: (e: object, name: string) => void;
+  error?: boolean | null;
 }
 
-const UserInputField: FunctionComponent<IProps> = ({ id, label, name, onChange }) => (
+const UserInputField: FunctionComponent<IProps> = ({ id, label, name, onChange, error }) => (
   <TextField
+   error={error}
    variant="outlined" 
    required
    fullWidth
