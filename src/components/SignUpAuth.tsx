@@ -1,9 +1,10 @@
-import React, { FunctionComponent, useState } from 'react';
+import React, { FunctionComponent, useState, useEffect } from 'react';
 import { useDispatch } from "react-redux"
 import Grid from "@material-ui/core/Grid"
 import TextField from "@material-ui/core/TextField"
 import Button from "@material-ui/core/Button"
 import Avatar from "@material-ui/core/Avatar"
+import Link from "@material-ui/core/Link"
 import LockOutLinedIcon from "@material-ui/icons/LockOutLined"
 import Typography from "@material-ui/core/Typography";
 import { makeStyles } from '@material-ui/core/styles';
@@ -21,11 +22,16 @@ const SignUpAuth = () => {
     confirmPassword: ""
   })
   const [firebaseError, setFirebaseError] = useState("")
+  const dispatch = useDispatch()
+
+  const handleClick = () => {
+     dispatch({ type: "SIGN_UP_LINK_CLICKED" })
+  }
 
   return (
     <>
-     <Grid item>
-          <Typography component="h1" variant="h6">
+     <Grid item className="sign-up-auth">
+          <Typography component="h1" variant="h6" align="center" color="secondary">
             {firebaseError}
           </Typography>
         </Grid>
@@ -61,6 +67,11 @@ const SignUpAuth = () => {
          </Button>
       </form>
     </Grid>
+    <Grid item>
+          <Link href="#" variant="body2" onClick={handleClick}>
+             Already have an account? Sign in
+          </Link>
+        </Grid>
     </>
   );
 
