@@ -3,20 +3,24 @@
 /* fallback for old browsers */
 .login {
   height: 100vh;
-  -webkit-transition: -webkit-transform;
-  transition: -webkit-transform;
-  transition: transform;
-  transition: transform, -webkit-transform;
-  background: #283048;
-  background: -webkit-gradient(linear, left top, right top, from(#859398), to(#283048));
-  background: linear-gradient(to right, #859398, #283048);
+  position: relative;
+  background-image: url("../images/background.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
-.login-container {
-  height: 100vh;
-  position: relative;
-  z-index: 1;
-  background-color: linear-gradient(to right, #859398, #283048);
+.login__container {
+  min-height: 600px;
+  max-width: 600px;
+  margin: 0;
+  background-color: none;
+  position: absolute;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  left: 50%;
+  top: 50%;
+  padding: 2em;
 }
 
 .login__form {

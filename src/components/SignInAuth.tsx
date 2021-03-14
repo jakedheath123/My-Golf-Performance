@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch } from "react-redux"
 import Grid from "@material-ui/core/Grid"
-import TextField from "@material-ui/core/TextField"
 import Button from "@material-ui/core/Button"
 import Avatar from "@material-ui/core/Avatar"
 import LockOutLinedIcon from "@material-ui/icons/LockOutLined"
@@ -18,15 +17,18 @@ const SignInAuth = () => {
     email: "",
     password: "",
   })
-  const [firebaseError, setFirebaseError] = useState("")
+  const [firebaseError, setFirebaseError] = useState({
+    code: "",
+    message: ""
+  })
 
    return (
     <>
-    <Grid item>
-          <Typography component="h1" variant="h6">
-            {firebaseError}
+    <Grid item className="sign-in-auth">
+          <Typography component="h1" variant="h6" align="center" color="secondary">
+            {firebaseError.message}
           </Typography>
-        </Grid>
+    </Grid>
     <Avatar className={classes.avatar}>
     <LockOutLinedIcon />
   </Avatar>
@@ -37,8 +39,8 @@ const SignInAuth = () => {
   </Grid>
     <Grid item >
       <form>
-      <UserInputField id="email" label="Email" name="email" onChange={handleChange}/>
-      <UserInputField id="password" label="Password" name="password" onChange={handleChange}/>
+      <UserInputField id="email" label="Email" name="email" onChange={handleChange} error={firebaseError.code === "auth/invalid-email" ? true: false}/>
+      <UserInputField id="password" label="Password" name="password" onChange={handleChange} error={firebaseError.code === "auth/wrong-password" ? true: false}/>
          <Button
          type="submit"
          fullWidth
@@ -65,7 +67,9 @@ const SignInAuth = () => {
     .then(result => {
       //Successful sign-in
     })
-    .catch(error => setFirebaseError(error.message))
+    .catch(({ code, message }) => {
+      setFirebaseError({code, message})
+    })
   }
 };
 
